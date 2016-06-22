@@ -5,3 +5,8 @@ Bash script for setup the initial configuration
 - user
 - url
 - password
+
+
+Dependencies:
+- git
+- git-ftp
