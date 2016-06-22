@@ -1,1 +1,30 @@
-/opt/scripts/git-ftp-config
+#!/bin/bash
+echo "git-ftp    Host configuration tool"
+echo "Insert protocol://URL/folder"
+echo "Ex.:"
+echo "sftp://myhost.com.br/httpdocs/"
+echo "myhost.com.br/httpdocs/    => default FTP"
+echo $url
+
+git config git-ftp.url
+read -p "Host:" url
+
+if [ -n $url ] ; then
+    git config git-ftp.url $url
+fi
+
+echo "Insert user"
+git config git-ftp.user
+read -p "User:" user
+if [ -n $user ] ; then
+    git config git-ftp.user $user
+fi
+
+echo "Insert password"
+echo "Blank for -P in command line for intercativo password when executinf git-ftp"
+git config git-ftp.password
+read -p "Password(enter for blank):" pass
+if [ -n $pass ] ; then
+    git config git-ftp.password $pass
+fi
+
