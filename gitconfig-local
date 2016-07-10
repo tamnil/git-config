@@ -1,0 +1,40 @@
+#!/bin/bash
+echo "*********WARNING*************"
+echo "Your current configuration:"
+echo 
+git config  --list
+echo
+echo " ***** Execute the following to git global:*****"
+echo "
+git config  core.fscache true
+git config  core.preloadindex true
+git config  diff.mnemonicprefix true
+git config  gc.auto 256
+git config  merge.stat true
+git config  rerere.enabled true
+git config  user.email "tamnil@gmal.com"
+git config  user.name "Tamnil Saito Junior"
+"
+
+read -p "Are you sure?[n] " -n 1 -r
+echo ""
+
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+git config  core.fscache true
+git config  core.preloadindex true
+git config  diff.mnemonicprefix true
+git config  gc.auto 256
+git config  merge.stat true
+git config  rerere.enabled true
+git config  user.email ""
+git config  user.name ""
+####### list configuration:
+echo
+echo "**************Final Configuration*********"
+
+git config  --list
+else
+    echo "Aborted"
+fi
+
