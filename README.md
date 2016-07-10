@@ -9,15 +9,7 @@ git-ftp:
 - url
 - password
 
-
-
-
-
-
-
-
-
 Dependencies:
 - git
 - git-ftp
-- bash
+- bash/sh/zsh
